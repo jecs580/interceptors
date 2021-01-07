@@ -1,3 +1,4 @@
+import { UsuariosService } from './services/usuarios.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'interceptores';
+  constructor(private usuariosService:UsuariosService){
+    this.usuariosService.obtenerUsuario()
+    .subscribe(resp=>{
+      console.log(resp);
+      
+    })
+  }
 }
